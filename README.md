@@ -9,7 +9,7 @@ El modelo IA se basa en un clasificador de imágenes entrenado previamente, y la
 ## 🌐 Demo en producción
 
 **Netlify App:**  
-🔗 [melanoma-detect.netlify.app](https://melanoma-detect.netlify.app)
+🔗 [melanoma-detect.netlify.app](https://melanomadetectai.netlify.app/)
 
 ---
 
