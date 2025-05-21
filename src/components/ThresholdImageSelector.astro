@@ -1,57 +1,68 @@
-<main class=" p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-bold mb-6 text-center">Selecciona el umbral deseado</h2>
+---
+// ThresholdImageSelector.astro
+---
 
-  <form class="space-y-4">
-    <!-- Opción 1 -->
-    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-blue-500">
-      <input
-        type="radio"
-        name="threshold"
-        value="0.2"
-        class="form-radio text-blue-600"
-        checked
-      />
-      <div class="ml-4">
-        <p class="font-semibold">Umbral Bajo</p>
-        <p class="text-gray-600 text-sm">
-          Sensibilidad alta, detecta más casos pero puede aumentar falsos positivos.
-        </p>
-      </div>
-    </label>
+<section class="flex flex-col items-center justify-center md:items-start p-4">
 
-    <!-- Opción 2 -->
-    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-blue-500">
-      <input
-        type="radio"
-        name="threshold"
-        value="0.43"
-        class="form-radio text-blue-600"
-      />
-      <div class="ml-4">
-        <p class="font-semibold">Umbral Medio</p>
-        <p class="text-gray-600 text-sm">
-          Balance entre sensibilidad y precisión, recomendado para uso general.
-        </p>
-      </div>
-    </label>
+  <div class="bg-white rounded-lg shadow-md max-w-sm">
+    <form class="space-y-6 p-2">
+      <!-- Opción 1 -->
+      <label
+        class="flex items-center p-1 border rounded-lg cursor-pointer hover:border-blue-500"
+      >
+        <input
+          type="radio"
+          name="threshold"
+          value="0.2"
+          class="form-radio text-blue-600"
+          checked
+        />
+        <div class="ml-3 sm:ml-4">
+          <p class="font-semibold text-sm sm:text-base md:text-lg">Nivel Bajo</p>
+          <p class="text-gray-600 text-xs sm:text-sm md:text-base">
+            Sensibilidad alta, detecta más casos pero puede aumentar falsos positivos.
+          </p>
+        </div>
+      </label>
 
-    <!-- Opción 3 -->
-    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:border-blue-500">
-      <input
-        type="radio"
-        name="threshold"
-        value="0.6"
-        class="form-radio text-blue-600"
-      />
-      <div class="ml-4">
-        <p class="font-semibold">Umbral Alto</p>
-        <p class="text-gray-600 text-sm">
-          Mayor precisión, reduce falsos positivos pero puede perder algunos casos.
-        </p>
-      </div>
-    </label>
-  </form>
-</main>
+      <!-- Opción 2 -->
+      <label
+        class="flex items-center p-1 border rounded-lg cursor-pointer hover:border-blue-500"
+      >
+        <input
+          type="radio"
+          name="threshold"
+          value="0.43"
+          class="form-radio text-blue-600"
+        />
+        <div class="ml-3 sm:ml-4">
+          <p class="font-semibold text-sm sm:text-base md:text-lg">Nivel Medio</p>
+          <p class="text-gray-600 text-xs sm:text-sm md:text-base">
+            Balance entre sensibilidad y precisión, recomendado para uso general.
+          </p>
+        </div>
+      </label>
+
+      <!-- Opción 3 -->
+      <label
+        class="flex items-center p-1 border rounded-lg cursor-pointer hover:border-blue-500"
+      >
+        <input
+          type="radio"
+          name="threshold"
+          value="0.6"
+          class="form-radio text-blue-600"
+        />
+        <div class="ml-3 sm:ml-4">
+          <p class="font-semibold text-sm sm:text-base md:text-lg">Nivel Alto</p>
+          <p class="text-gray-600 text-xs sm:text-sm md:text-base">
+            Mayor precisión, reduce falsos positivos pero puede perder algunos casos.
+          </p>
+        </div>
+      </label>
+    </form>
+  </div>
+</section>
 
 <script>
   let lastPrediction = null;
@@ -61,7 +72,7 @@
     if (lastPrediction !== null && resultText) {
       const percentage = (lastPrediction * 100).toFixed(2);
       const diagnosis = lastPrediction >= threshold ? "Melanoma" : "No Melanoma";
-      resultText.textContent = `Resultado: ${diagnosis} (Prob: ${percentage}%)`;
+      resultText.textContent = `Resultado: ${diagnosis}`;
     }
   }
 

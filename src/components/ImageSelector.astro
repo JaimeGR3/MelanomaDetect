@@ -2,41 +2,45 @@
 // ImageSelector.astro
 ---
 
-<main
-    class="bg-white p-8 rounded-lg shadow-md flex justify-center min-h-80 min-w-80"
+<section
+    class="pt-5 sm:pt-10 flex flex-col items-center justify-center"
 >
-    <label
-        for="fileInput"
-        class="flex flex-col items-center justify-center cursor-pointer text-gray-600 hover:text-blue-600"
+    <div
+        class="bg-white dark:bg-gray-300 rounded-lg shadow-md max-w-md sm:max-w-lg min-w-40 min-h-50 md:min-w-80 md:min-h-80 flex flex-col items-center justify-center"
     >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-16 h-16 text-gray-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="1.5"
+        <label
+            for="fileInput"
+            class="flex flex-col items-center justify-center cursor-pointer text-gray-600 hover:text-blue-600"
         >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 5a2 2 0 012-2h4l2 2h8a2 2 0 012 2v3m-4 3l-3 3m0 0l-3-3m3 3V9m-8 9h12a2 2 0 002-2v-5a2 2 0 00-2-2H6a2 2 0 00-2 2v5a2 2 0 002 2z"
-            ></path>
-        </svg>
-        <span class="text-lg font-semibold">Selecciona una imagen</span>
-    </label>
-    <input id="fileInput" type="file" accept="image/*" class="hidden" />
-</main>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-16 h-16 text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.5"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 5a2 2 0 012-2h4l2 2h8a2 2 0 012 2v3m-4 3l-3 3m0 0l-3-3m3 3V9m-8 9h12a2 2 0 002-2v-5a2 2 0 00-2-2H6a2 2 0 00-2 2v5a2 2 0 002 2z"
+                ></path>
+            </svg>
+            <span class="text-sm sm:text-base md:text-lg font-semibold">Selecciona una imagen</span>
+        </label>
+        <input id="fileInput" type="file" accept="image/*" class="hidden" />
+    </div>
+</section>
 
 <script>
-    const input = document.getElementById("fileInput"); // 👈 Cambia por tu Space
+    const input = document.getElementById("fileInput");
     import { uploadAndPredictImage } from "../api/api.js";
 
     function getSelectedThreshold() {
         const selectedRadio = document.querySelector(
             'input[name="threshold"]:checked',
         );
-        return selectedRadio ? parseFloat(selectedRadio.value) : 0.2; // valor por defecto si no hay ninguno
+        return selectedRadio ? parseFloat(selectedRadio.value) : 0.2;
     }
 
     input?.addEventListener("change", async (event) => {

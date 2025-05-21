@@ -1,8 +1,44 @@
-<header class="bg-gray-800 text-white text-center pt-4 pb-6">
-    <h1 class="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 font-bold">
+---
+import DarkIcon from "../assets/darkIcon.svg";
+import LightIcon from "../assets/lightIcon.svg";
+---
+
+<header class="relative bg-gray-800 text-center py-5">
+    <h1
+        class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 font-bold
+    text-2xl sm:text-3xl md:text-4xl"
+    >
         Melanoma Detect AI
     </h1>
-    <p class="text-xl mt-4">
-        Diagnóstico inteligente de melanoma usando redes neuronales convolucionales y análisis avanzado de imágenes médicas.
-    </p>
+
+    <!-- Toggle Theme Button -->
+    <button
+        id="themeToggle"
+        onclick=toggleTheme()
+        class="absolute top-5 right-5 p-2 rounded-full bg-gray-200 dark:bg-gray-700 group"
+        aria-label="Toggle theme"
+    >
+        <DarkIcon
+            class="hidden dark:block w-4 h-4 text-gray-400 group-hover:text-gray-200"
+        />
+        <LightIcon
+            class="block dark:hidden w-4 h-4 text-gray-400 group-hover:text-gray-600"
+        />
+    </button>
 </header>
+
+<script>
+  const layout = document.getElementById("layout");
+
+  window.toggleTheme = function () {
+    if (!layout) return;
+
+    if (layout.classList.contains("dark")) {
+      layout.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      layout.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  };
+</script>

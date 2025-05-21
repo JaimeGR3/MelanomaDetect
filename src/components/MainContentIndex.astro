@@ -1,53 +1,65 @@
-<main class="align-center max-w-6xl mx-auto p-8">
-    <h2 class="text-2xl text-gray-800 border-b-2 border-blue-500 pb-2">
-        Cómo funciona Melanoma Detect AI
-    </h2>
-
-    <div class="mt-4 space-y-6 text-lg text-gray-700">
-        <p>
-            Melanoma Detect AI es una herramienta diseñada para ayudarte a detectar de
-            forma temprana posibles casos de melanoma, un tipo de cáncer de
-            piel. Utiliza inteligencia artificial entrenada con miles de
-            imágenes para analizar la imagen que que quieras y ofrecerte una
-            predicción.
+<main
+    class="flex-1 flex justify-center pt-4 px-6 text-gray-800 dark:text-gray-100  min-w-80"
+>
+    <div class="w-4xl text-left text-xs sm:text-sm md:text-base">
+        <p class="text-xs sm:text-sm md:text-base text-pretty pb-4">
+            Diagnóstico inteligente de melanoma usando redes neuronales
+            convolucionales y análisis avanzado de imágenes médicas.
         </p>
-
-        <p>
-            Antes de subir la imagen, podrás elegir un <strong
-                >nivel de sensibilidad</strong
-            >, también llamado "umbral". Esto sirve para ajustar la forma en la
-            que el sistema decide si una lesión parece ser melanoma o no.
-            Simplemente escoge el nivel que se ajuste mejor a tu caso:
-        </p>
-
-        <ul class="list-disc list-inside">
-            <li>
-                <strong>Umbral Bajo (más sensible):</strong> detecta más posibles
-                casos, aunque podría dar más falsos positivos.
-            </li>
-            <li>
-                <strong>Umbral Medio (equilibrado):</strong> ofrece un buen balance
-                entre detección y precisión.
-            </li>
-            <li>
-                <strong>Umbral Alto (más estricto):</strong> reduce los falsos positivos,
-                pero podría pasar por alto algunos casos reales.
-            </li>
-        </ul>
-
-        <p>
-            Una vez elegido el umbral, solo tienes que <strong
-                >subir una imagen de la lesión cutánea</strong
-            > que deseas analizar. El sistema procesará la imagen y en unos segundos
-            te mostrará un resultado.
-        </p>
-    </div>
-    <div class="mt-8 flex justify-center">
-        <a
-            href="/main"
-            class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition-all duration-300 flex items-center gap-2"
+        <h2
+            class="text-gray-800 dark:text-gray-100 font-medium border-b-2 border-blue-500 pb-2 text-base sm:text-xl md:text-2xl"
         >
-            Empezar análisis
-        </a>
+            Cómo funciona Melanoma Detect AI
+        </h2>
+        <div class="mt-4 space-y-6 text-gray-700 dark:text-gray-50">
+            <p>
+                Melanoma Detect AI es una herramienta diseñada para ayudarte a
+                detectar de forma temprana posibles casos de melanoma, un tipo
+                de cáncer de piel que apesar de no ser del que hay, representa
+                el 75% de las muertes por cancer de piel.
+                <br />Utiliza Melanoma Detect una inteligencia artificial
+                entrenada con miles de imágenes para analizar la imagen que que
+                quieras y ofrecerte una predicción.
+            </p>
+
+            <p>
+                Antes de subir la imagen, podrás elegir un <strong
+                    >nivel de sensibilidad</strong
+                >, esto sirve para ajustar la forma en la que el sistema decide
+                si una lesión parece ser melanoma o no. Simplemente escoge el
+                nivel que se ajuste mejor a tu caso:
+            </p>
+
+            <ul class="space-y-2 border-l-3 border-blue-500 pl-4">
+                <li>
+                    <strong>Nivel Bajo (más sensible):</strong> detecta más posibles
+                    casos, aunque da más falsos positivos.
+                </li>
+                <li>
+                    <strong>Nivel Medio (equilibrado):</strong> ofrece un buen balance
+                    entre detección y precisión.
+                </li>
+                <li>
+                    <strong>Nivel Alto (más estricto):</strong> reduce los falsos
+                    positivos, pero podría pasar por alto algunos casos reales.
+                </li>
+            </ul>
+
+            <p>
+                Una vez elegido el umbral, solo tienes que <strong
+                    >subir una imagen de la lesión cutánea</strong
+                > que deseas analizar. El sistema procesará la imagen y en unos segundos
+                te mostrará un resultado.
+            </p>
+
+            <div class="mt-6 mb-15 flex justify-center">
+                <a
+                    href="/main"
+                    class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition-all duration-300 flex items-center gap-2"
+                >
+                    Empezar análisis
+                </a>
+            </div>
+        </div>
     </div>
 </main>

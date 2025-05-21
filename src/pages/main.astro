@@ -1,5 +1,4 @@
 ---
-import ThresholdImageSelector from "../components/ThresholdImageSelector.astro";
 import ImageSelector from "../components/ImageSelector.astro";
 import Result from "../components/Result.astro";
 import Header from "../components/HeaderIndex.astro";
@@ -9,13 +8,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <Header />
-  <main>
-    <div class="flex flex-row justify-center p-12 space-x-8">
-      <ImageSelector />
-      <ThresholdImageSelector />
-    </div>
-    <Result />
-  </main>
+    <ImageSelector />
+    <Result/>
+  <Footer />
 </Layout>
-
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
